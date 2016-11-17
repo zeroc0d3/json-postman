@@ -1,0 +1,35 @@
+var jsonData = JSON.parse(responseBody);
+tests["Show response data"] = !responseBody.has('error');
+
+// References: https://spacetelescope.github.io/understanding-json-schema/structuring.html
+var schema_test = {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    
+    "definitions": {
+        "allOf": {
+            "type": "object",
+            "properties": {
+                "id": {"type":"string"},
+                "postedon": {"type":"string"},
+                "title" : {"type":"string"},
+            },
+            "required": ["id", "postedon", "title"]
+        },
+        
+    },
+    
+    "type": "array",
+    "items": { 
+        "$ref": "#/definitions/allOf",
+        "additionalProperties": false
+    }
+};
+
+var result  = tv4.validateResult(jsonData.data, schema_test);
+var isValid = result.valid
+
+if (!isValid) {
+    tests["Invalid Schema => " + result.error + " at " + result.error.dataPath + " (" + result.error.schemaPath + ")"] = isValid;
+} else {
+    tests["Valid format data json"] = isValid;
+}
