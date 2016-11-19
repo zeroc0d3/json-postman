@@ -7,12 +7,12 @@ JSON Automation Test Case via Postman
 	* to avoid data corruption
 	* to simplify processing code
 	* to use validation code in tests
-	
+		
 ### Why JSON (and not XML)?
 	* as wide adoption as XML
 	* easier to process and more concise than XML
 	* dominates web development because of JavaScript
-	
+
 ### Why Use Schemas?
 	* declarative
 	* easier to maintain
@@ -50,8 +50,17 @@ JSON Automation Test Case via Postman
 3. Click "Runner" button and select the "ZeroC0D3 TestCase API",
 4. Click "Start Runner" button.
 5. Done.
+
+## Using Newman
+1. Download test result "ZeroC0D3_Result.json" in folder "collection".
+2. Install newman
+   * npm install -g newman
+3. Open your terminal / command,
+4. Running newman command
+   * newman -c ZeroC0D3_Result.json 	
+5. Done.
    
-### References
+## References
 1. http://blog.getpostman.com/2014/03/07/writing-automated-tests-for-apis-using-postman/
 2. http://blog.getpostman.com/2014/04/17/how-to-write-automated-tests-for-apis-with-postman-part-2/
 3. https://github.com/geraintluff/tv4
