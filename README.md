@@ -1,14 +1,6 @@
 # json-postman
 JSON Automation Test Case via Postman
 
-1. Install postman.
-2. Install tv4 (Tiny Validator).
-   * npm install tv4
-3. Install ajv (Another JSON Schema Validator).
-   * npm install ajv
-4. Copy & paste the testcase script on tab "test" postman.
-5. Done.
-
 ## Abstract
 ### Why Validate Data as a Separate Step?
 	* to fail fast
@@ -40,6 +32,16 @@ JSON Automation Test Case via Postman
 	* tested result
 	* easy to learn from simple to complex condition
 	* using schema references to validate the response
+	* using external library PostmanBDD not only TinyValidator (tv4)
+
+## Installation
+1. Install postman.
+2. Install tv4 (Tiny Validator).
+   * npm install tv4
+3. Install ajv (Another JSON Schema Validator).
+   * npm install ajv
+4. Copy & paste the testcase script on tab "test" postman.
+5. Done.
 	
 ## Runner Postman
 1. Import the collection in folder "collection", or
